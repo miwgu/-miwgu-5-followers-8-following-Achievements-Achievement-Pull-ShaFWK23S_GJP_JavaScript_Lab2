@@ -311,12 +311,29 @@ dbwebb.assert("1.9", ANSWER, false);
  * Write your code below and put the answer into the variable ANSWER.
  */
 
+let fizzBuzz = (start, stop) => {
+    let result= "";
+    if(stop<=start){
+        return result="Error! Stop should be not equal or larger than start."
+    } 
 
- 
+    for(let i=start;i<=stop;i++ ){
 
+        if (i%3==0 && i%5==0){
+            result+="Fizz Buzz"+",";
+        } else if(i%3==0){
+            result+="Fizz"+",";
+        } else if(i%5==0){
+            result+= "Buzz"+",";
+        } else{
+            result+= i +",";
+        }
+    }
+    return result.slice(0,-1);
 
+}
 
-ANSWER = "Replace this text with the variable holding the answer.";
+ANSWER = fizzBuzz(1,30);
 
 // I will now test your answer - change false to true to get a hint.
 dbwebb.assert("1.10", ANSWER, false);
