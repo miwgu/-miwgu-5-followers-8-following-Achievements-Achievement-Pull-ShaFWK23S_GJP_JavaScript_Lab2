@@ -284,7 +284,9 @@ dbwebb.assert("1.8", ANSWER, false);
 
 let degreesToRadians= (degree)=> {
     return parseFloat((degree * (Math.PI / 180)).toFixed(4));
-}
+     // let radians =degree * (Math.PI / 180);
+    // Math.round(radians*10000)/10000
+}   
 
 ANSWER = degreesToRadians(32);
 
@@ -314,16 +316,16 @@ dbwebb.assert("1.9", ANSWER, false);
 let fizzBuzz = (start, stop) => {
     let result= "";
     if(stop<=start){
-        return result="Error! Stop should be not equal or larger than start."
+        return result="Error! Stop should not be equal or larger than start."
     } 
 
     for(let i=start;i<=stop;i++ ){
 
-        if (i%3==0 && i%5==0){
+        if (i%3===0 && i%5===0){
             result+="Fizz Buzz"+",";
-        } else if(i%3==0){
+        } else if(i%3===0){
             result+="Fizz"+",";
-        } else if(i%5==0){
+        } else if(i%5===0){
             result+= "Buzz"+",";
         } else{
             result+= i +",";
@@ -480,6 +482,9 @@ let calculateInterest = (money,years,interestRate) => {
     console.log(total + " "+i)
     }
     return parseFloat(total.toFixed(4));
+
+    // let endMoney = money * (Math.pow((1 + interest / 100), years));
+    //return parseFloat(endMoney.toFixed(4))
 
 }
 
